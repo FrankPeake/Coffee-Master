@@ -1,0 +1,61 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+}
+.nav-links {
+    text-decoration: none;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.signUp{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+.signIn{
+    text-decoration: none;
+    text-align: center;
+    width: 75px;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 7px;
+    margin: 0 20px;
+    cursor: pointer;
+
+}
+.joinNow{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: black;
+    width: 75px;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 7px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.nav-links{
+    margin: 50px;
+    cursor: pointer;
+}
+.Logo{
+    width: 100px;
+    margin: 20px;
+}

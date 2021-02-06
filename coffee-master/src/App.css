@@ -1,0 +1,19 @@
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #fff;
+  color: rgba(0,0,0,.87);
+  font-family: SoDoSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "calt";
+}
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
