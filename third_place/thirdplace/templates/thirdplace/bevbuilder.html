@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'thirdplace/bevbuilderStyleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
+  </head>
+  <body>
+    <nav class="navbar">
+        <img src="{% static 'thirdplace/sblogo.svg' %}" alt="Coffee Masters" class="Logo"/>
+        <ul class="nav-links">
+            <a href="{% url 'index' %}" class='blkLink'>
+                <li>Home</li>
+            </a>
+            <a href="{% url 'bevbuilder' %}" class='blkLink'>
+                <li>Beverage Builder</li>
+            </a>
+            <a href="{% url 'browser' %}" class='blkLink'>
+                <li>Browse</li>
+            </a>
+        </ul>
+        <ul class="signUp">
+            <a href="{% url 'login' %}" class='blkLink'>
+                <li class='signIn'>Sign In</li>
+            </a>
+            <a href="{% url 'signup' %}" class='blkLink'>
+                <li class='joinNow'>Sign Up</li>
+            </a>
+        </ul>
+    </nav>
+    <div class>
+        <div class='banner'><h1 class='header3'>Beverage Builder</h1><p>Create Your Own Hand-Crafted Beverage</p></div>
+        <div class='bevBuilder'>
+        <div class='modLeft'>
+
+            <h1>Flavors</h1>
+                <ul class='modification'>
+                    <li><label for="quanitity">Mocha</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">White Mocha</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Chai</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Vanilla</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Hazelnut</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Cinnamon Dolce</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Toffee Nut</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Vanilla (SF)</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Cinnamon Dolce (SF)</label><input min="0" max="99" type="number" name="quantity"/></li>
+                </ul>
+
+                <h1>Milk</h1>
+                <ul class='modification'>
+                    <li><label for="quanitity">Whole Milk</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">2% Milk</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Nonfat Milk</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Almond Milk</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Soy Milk</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Coconut Milk Dolce</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Oat Milk</label><input type="radio" name="quantity"/></li>
+                </ul>
+        </div>
+        <div>
+
+        </div>
+        <div class='modRight'>
+            <h1>Modifications</h1>
+                <ul class='modification'>
+                    <li><label for="quanitity">Whipped Cream</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Caramel Drizzle</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Mocha Drizzle</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Upside Down</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Double Blended</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Ice</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Cinnamon</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Upside Down</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Double Blended</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Ice</label><input type="radio" name="quantity"/></li>
+                </ul>
+
+                <h1>Espresso</h1>
+                <ul class='modification'>
+                    <li><label for="quanitity">Signature</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Blonde</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Affegato</label><input min="0" max="99" type="number" name="quantity"/></li>
+                    <li><label for="quanitity">Ristretto</label><input type="radio" name="quantity"/></li>
+                    <li><label for="quanitity">Long</label><input type="radio" name="quantity"/></li>
+                </ul>
+        </div>
+
+        </div>
+        <h1 class='button'>Submit</h1>
+    </div>
+  </body>
+</html>

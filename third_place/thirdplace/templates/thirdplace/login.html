@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'thirdplace/loginStyleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
+  </head>
+  <body>
+    <nav class="navbar">
+        <img src="{% static 'thirdplace/sblogo.svg' %}" alt="Coffee Masters" class="Logo"/>
+        <ul class="nav-links">
+            <a href="{% url 'index' %}" class='blkLink'>
+                <li>Home</li>
+            </a>
+            <a href="{% url 'bevbuilder' %}" class='blkLink'>
+                <li>Beverage Builder</li>
+            </a>
+            <a href="{% url 'browser' %}" class='blkLink'>
+                <li>Browse</li>
+            </a>
+        </ul>
+        <ul class="signUp">
+            <a href="{% url 'login' %}" class='blkLink'>
+                <li class='signIn'>Sign In</li>
+            </a>
+            <a href="{% url 'signup' %}" class='blkLink'>
+                <li class='joinNow'>Sign Up</li>
+            </a>
+        </ul>
+    </nav>
+        <div class='login-container'>
+          <div class='logo-wall'></div>
+          <div class='login-form'>
+              <h1 class='login-heading'>Sign In</h1>
+              <form>
+                  <input type='text' name='username' placeholder="Username" required/>
+                  <input type='password' name='password' placeholder="Password" required/>
+                  <button class='login-btn'>Login</button>
+                  <h3 class='not_a_member'>Not a Member? Sign up <a href="{% url 'signup' %}">Here</a></h3>
+              </form>
+          </div>        
+      </div>
+  </body>
+</html>

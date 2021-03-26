@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'third_place/signupStleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'third_place/navbarStyleSheet.css' %}">
+  </head>
+  <body>
+        <nav className="navbar">
+            <img src={% static 'sblogo.svg' %} alt="Coffee Masters" class="Logo"/>
+            <ul class="nav-links">
+                <a href="{% static 'third_place/index.html %}" class='blkLink'>
+                    <li>Home</li>
+                </a>
+                <a href="{% static 'third_place/bevbuilder.html %}" class='blkLink'>
+                    <li>Beverage Builder</li>
+                </a>
+                <a href="{% static 'third_place/browse.html %}" class='blkLink'>
+                    <li>Browse</li>
+                </a>
+            </ul>
+            <ul class="signUp">
+                <a href="{% static 'third_place/login.html %}" class='blkLink'>
+                    <li class='signIn'>Sign In</li>
+                </a>
+                <a href="{% static 'third_place/singup.html %}" class='blkLink'>
+                    <li class='joinNow'>Sign Up</li>
+                </a>
+            </ul>
+        </nav>
+        <div class='login-container'>
+            <div class='signup-green'></div>
+            <div class='login-form'>
+                <h1 class='login-heading'>Sign Up</h1>
+                <form>
+                    <input type='text' name='username' placeholder="Username" required/>
+                    <input type='password' name='password' placeholder="Password" required/>
+                    <input type='text' name='first_name' placeholder="First Name" required/>
+                    <input type='text' name='last_name' placeholder="Last Name" required/>
+                    <input type='text' name='email' placeholder="Email Address" required/>
+                    <input type='text' name='city' placeholder="City" required/>
+                    <input type='text' name='st' placeholder="State" required/>
+                    <button class='login-btn'>Sign Up</button>
+                </form>
+            </div>        
+        </div>
+  </body>
+</html>

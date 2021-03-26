@@ -1,0 +1,26 @@
+.banner {
+  float: center;
+  height: 180px;
+  background-color: #1e3932;
+  color: black;
+  text-align: center;
+}
+.banner input[type="text"] {
+  width: 600px;
+  top: 100px;
+}
+.search-btn {
+  width: 10%;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #fff;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 3px;
+}

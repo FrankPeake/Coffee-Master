@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'third_place/loginStyleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'third_place/navbarStyleSheet.css' %}">
+  </head>
+  <body>
+        <nav className="navbar">
+            <img src={% static 'sblogo.svg' %} alt="Coffee Masters" class="Logo"/>
+            <ul className="nav-links">
+                <a href="{% static 'third_place/index.html %}" class='blkLink'>
+                    <li>Home</li>
+                </a>
+                <a href="{% static 'third_place/bevbuilder.html %}" class='blkLink'>
+                    <li>Beverage Builder</li>
+                </a>
+                <a href="{% static 'third_place/browse.html %}" class='blkLink'>
+                    <li>Browse</li>
+                </a>
+            </ul>
+            <ul className="signUp">
+                <a href="{% static 'third_place/login.html %}" class='blkLink'>
+                    <li class='signIn'>Sign In</li>
+                </a>
+                <a href="{% static 'third_place/singup.html %}" class='blkLink'>
+                    <li class='joinNow'>Sign Up</li>
+                </a>
+            </ul>
+        </nav>
+        <div class='login-container'>
+          <div class='logo-wall'></div>
+          <div class='login-form'>
+              <h1 class='login-heading'>Sign In</h1>
+              <form>
+                  <input type='text' name='username' placeholder="Username" required/>
+                  <input type='password' name='password' placeholder="Password" required/>
+                  <button class='login-btn'>Login</button>
+                  <h3 class='not_a_member'>Not a Member? Sign up <a href="{% static 'third_place/singup.html %}">Here</a></h3>
+              </form>
+          </div>        
+      </div>
+  </body>
+</html>

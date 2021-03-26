@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'thirdplace/signupStleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
+  </head>
+  <body>
+    <nav class="navbar">
+        <img src="{% static 'thirdplace/sblogo.svg' %}" alt="Coffee Masters" class="Logo"/>
+        <ul class="nav-links">
+            <a href="{% url 'index' %}" class='blkLink'>
+                <li>Home</li>
+            </a>
+            <a href="{% url 'bevbuilder' %}" class='blkLink'>
+                <li>Beverage Builder</li>
+            </a>
+            <a href="{% url 'browser' %}" class='blkLink'>
+                <li>Browse</li>
+            </a>
+        </ul>
+        <ul class="signUp">
+            <a href="{% url 'login' %}" class='blkLink'>
+                <li class='signIn'>Sign In</li>
+            </a>
+            <a href="{% url 'signup' %}" class='blkLink'>
+                <li class='joinNow'>Sign Up</li>
+            </a>
+        </ul>
+    </nav>
+        <div class='login-container'>
+            <div class='signup-green'></div>
+            <div class='login-form'>
+                <h1 class='login-heading'>Sign Up</h1>
+                <form>
+                    <input type='text' name='username' placeholder="Username" required/>
+                    <input type='password' name='password' placeholder="Password" required/>
+                    <input type='text' name='first_name' placeholder="First Name" required/>
+                    <input type='text' name='last_name' placeholder="Last Name" required/>
+                    <input type='text' name='email' placeholder="Email Address" required/>
+                    <input type='text' name='city' placeholder="City" required/>
+                    <input type='text' name='st' placeholder="State" required/>
+                    <button class='login-btn'>Sign Up</button>
+                </form>
+            </div>        
+        </div>
+  </body>
+</html>

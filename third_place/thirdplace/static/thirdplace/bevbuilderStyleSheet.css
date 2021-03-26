@@ -1,0 +1,60 @@
+.modLeft {
+  float: left;
+  height: 600px;
+  width: 400px;
+  background-color: #f0ebe0;
+  margin: 60px;
+  border-radius: 25px;
+}
+.modRight {
+  float: right;
+  height: 600px;
+  width: 400px;
+  background-color: #f0ebe0;
+  margin: 60px;
+  border-radius: 25px;
+}
+.banner {
+  float: center;
+  height: 160px;
+  background-color: #1e3932;
+}
+.bevBuilder {
+  height: 100vh;
+  background-color: #d4e9e2;
+}
+.modification {
+  text-decoration: none;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+h1 {
+  text-align: center;
+  color: #1e3932;
+}
+p {
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+input[type="number"] {
+  width: 35px;
+  float: right;
+  margin-right: 50px;
+}
+input[type="radio"] {
+  float: right;
+  margin-right: 50px;
+}
+.header3 {
+  color: white;
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 20px;
+}
