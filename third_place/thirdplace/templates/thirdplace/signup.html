@@ -1,33 +1,7 @@
+{% extends thirdplace/wrapper.html %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="{% static 'thirdplace/signupStleSheet.css' %}">
-    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
-  </head>
-  <body>
-    <nav class="navbar">
-        <img src="{% static 'thirdplace/sblogo.svg' %}" alt="Coffee Masters" class="Logo"/>
-        <ul class="nav-links">
-            <a href="{% url 'index' %}" class='blkLink'>
-                <li>Home</li>
-            </a>
-            <a href="{% url 'bevbuilder' %}" class='blkLink'>
-                <li>Beverage Builder</li>
-            </a>
-            <a href="{% url 'browser' %}" class='blkLink'>
-                <li>Browse</li>
-            </a>
-        </ul>
-        <ul class="signUp">
-            <a href="{% url 'login' %}" class='blkLink'>
-                <li class='signIn'>Sign In</li>
-            </a>
-            <a href="{% url 'signup' %}" class='blkLink'>
-                <li class='joinNow'>Sign Up</li>
-            </a>
-        </ul>
-    </nav>
+
         <div class='login-container'>
             <div class='signup-green'></div>
             <div class='login-form'>
@@ -44,5 +18,5 @@
                 </form>
             </div>        
         </div>
-  </body>
-</html>
+
+{% endblock %}
