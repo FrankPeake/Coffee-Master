@@ -36,12 +36,13 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'thirdplace',
+    'django-couchbase'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+
+## Couchbase buckets for use in data
+CB_BUCKETS = {
+
+    # Local instance connection for couchbase for testing/development
+    "COFFEEMASTERS" : '127.0.0.1/CoffeeMasters'
 }
 
 
