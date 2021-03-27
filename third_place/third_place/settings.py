@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'thirdplace',
-    'django-couchbase'
+    'django_couchbase',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,10 +89,11 @@ DATABASES = {
 
 ## Couchbase buckets for use in data
 CB_BUCKETS = {
-
-    # Local instance connection for couchbase for testing/development
     "COFFEEMASTERS" : '127.0.0.1/CoffeeMasters'
 }
+
+
+
 
 
 # Password validation
