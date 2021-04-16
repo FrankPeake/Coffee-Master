@@ -1,10 +1,176 @@
-{% extends thirdplace/wrapper.html %}
+{% extends 'thirdplace/wrapper.html' %}
 {% block content %}
 {% load static %}
+<script>
 
+</script>
+<head>
+    <link rel="stylesheet" href="{% static 'thirdplace/bevbuilderStyleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
     <div class>
-        <div class='banner'><h1 class='header3'>Beverage Builder</h1><p>Create Your Own Hand-Crafted Beverage</p></div>
+
+        <div class='banner'><h1 class='header3'>Beverage Builder</h1><p class="bannertxt">Create Your Own Hand-Crafted Beverage</p></div>
         <div class='bevBuilder'>
+
+            <form action="">
+                <h1 style="padding: 30px;">Choose Your Beverage Type</h1>
+                <br>
+            <section>
+            <!--
+                <div>
+                    <input type="radio" id="hotcoffee" name="beverageType" value="Hot Coffee" checked>
+                    <label for="hotcoffee"> 
+                        <h2>Hot Coffee</h2>
+                        <p>Our classic drip-brewed hot coffee.</p> 
+                    </label>
+                </div>
+            -->
+                <div>
+                    <input type="radio" id="icedcoffee" name="beverageType" value="Iced Coffee">
+                    <label for="icedcoffee" class="type"> 
+                        <h2>Iced Coffee</h2>
+                        <p>Our standard iced coffee available with a variety of flavors and milk options.</p> 
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" id="coldbrew" name="beverageType" value="Cold Brew">
+                    <label for="coldbrew" class="type"> 
+                        <h2>Cold Brew</h2>
+                        <p>Our 20 hour steeped cold brew for when you need a kickstart to your day.</p> 
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" id="latte" name="beverageType" value="Latte">
+                    <label for="latte" class="type"> 
+                        <h2> Latte </h2>
+                        <p>Espresso beverage with steamed milk of your choice and a small amount of foam at the top.</p> 
+                    </label>
+                </div>
+            <!--
+                <div>
+                    <input type="radio" id="caramelmacchiato" name="beverageType" value="Caramel Macciato">
+                    <label for="caramelmacchiato">
+                        <h2>Caramel Macciato</h2>
+                        <p>A caramel lover's favorate espresso drink.</p> 
+                    </label>
+                </div>
+            -->
+            
+                <div>
+                    <input type="radio" id="icedlatte" name="beverageType" value="Iced Latte">
+                    <label for="icedlatte" class="type">
+                        <h2>Iced Latte</h2>
+                        <p>Cool down on a hot summer day with our juicy refreshers.</p>  
+                    </label>
+                </div>
+            
+                <div>
+                    <input type="radio" id="frappuccino" name="beverageType" value="Frappuccino">
+                    <label for="frappuccino" class="type"> 
+                        <h2>Frappuccino</h2>
+                        <p>indulge in one of our famous blended frappuccino beverages.</p> 
+                    </label>
+                </div>
+            </section>
+            </form>
+            <br>
+            <!--Flavors-->
+            <form action="">
+                <h1 style="padding: 30px;">Choose Your Flavor(s): Pump Quantity </h1>
+            <section>
+                    <div class="flavor"><label for="mocha"><h2>Mocha</h2></label><input min="0" max="99" type="number" name="quantity" id="mocha"/></div>
+                    <div class="flavor"><label for="whitemocha"><h2>White Mocha</h2></label><input min="0" max="99" type="number" name="quantity" id="whitemocha"/></div>
+                    <div class="flavor"><label for="chai"><h2>Chai</h2></label><input min="0" max="99" type="number" name="quantity" id="chai"/></div>
+                    <div class="flavor"><label for="vanilla"><h2>Vanilla</h2></label><input min="0" max="99" type="number" name="quantity" id="vanilla"/></div>
+                    <div class="flavor"><label for="hazelnut"><h2>Hazelnut</h2></label><input min="0" max="99" type="number" name="quantity" id="hazelnut"/></div>
+            </section>
+            <section>
+                    <div class="flavor"><label for="liquidcane"><h2>Liquid Cane</h2></label><input min="0" max="99" type="number" name="quantity" id="liquidcane"/></div>
+                    <div class="flavor"><label for="cinnamondolce"><h2>Cinnamon Dolce</h2></label><input min="0" max="99" type="number" name="quantity" id="cinnamondolce"/></div>
+                    <div class="flavor"><label for="toffeenut"><h2>Toffee Nut</h2></label><input min="0" max="99" type="number" name="quantity" id="toffeenut"/></div>
+                    <div class="flavor"><label for="vanillasf"><h2>Vanilla (SF)</h2></label><input min="0" max="99" type="number" name="quantity" id="vanillasf"/></div>
+                    <div class="flavor"><label for="cinnamondolcesf"><h2>Cinnamon Dolce (SF)</h2></label><input min="0" max="99" type="number" name="quantity" id="cinnamondolcesf"/></div>
+            </section>
+            </form>
+            <!--Milk-->
+            <form action="">
+                <h1 style="padding: 30px;">Add some Milk: Dairy or Non-Dairy </h1>
+            <section>
+                    <div class="flavor"><label for="whole"><h2>Whole Milk</h2></label><input type="checkbox" name="milk" id="whole"/></div>
+                    <div class="flavor"><label for="2percent"><h2>2% Milk</h2></label><input type="checkbox" name="milk" id="2percent"/></div>
+                    <div class="flavor"><label for="nonfat"><h2>Nonfat Milk</h2></label><input type="checkbox" name="milk" id="nonfat"/></div>
+                    <div class="flavor"><label for="cream"><h2>Cream</h2></label><input type="checkbox" name="milk" id="cream"/></div>
+            </section>
+            <section>
+                    <div class="flavor"><label for="almond"><h2>Almond Milk</h2></label><input type="checkbox" name="milk" id="almond"/></div>
+                    <div class="flavor"><label for="soy"><h2>Soy Milk</h2></label><input type="checkbox" name="milk" id="soy"/></div>
+                    <div class="flavor"><label for="coconut"><h2>Coconut Milk</h2></label><input type="checkbox" name="milk" id="coconut"/></div>
+                    <div class="flavor"><label for="oat"><h2>Oat Milk</h2></label><input type="checkbox" name="milk" id="oat"/></div>
+            </section>
+            </form>
+            <!--Addons-->
+            <form action="">
+                <h1 style="padding: 30px;">Elevate Your Drink With Yummy Additions:</h1>
+            <section>
+                    <div class="flavor"><label for="whippedcream"><h2>Whipped Cream</h2></label><input type="checkbox" name="addon" id="whole"/></div>
+                    <div class="flavor"><label for="coldfoam"><h2>Cold Foam</h2></label><input type="checkbox" name="addon" id="2percent"/></div>
+                    <div class="flavor"><label for="vsccf"><h2>Vanilla Sweet Cream Cold Foam</h2></label><input type="checkbox" name="addon" id="nonfat"/></div>
+                    <div class="flavor"><label for="slatedcaramelcf"><h2>Salted Caramel Cold Foam</h2></label><input type="checkbox" name="addon" id="cream"/></div>
+            </section>
+            <section>
+                    <div class="flavor"><label for="mochadrizzle"><h2>Mocha Drizzle</h2></label><input type="checkbox" name="addon" id="mochadrizzle"/></div>
+                    <div class="flavor"><label for="carameldrizzle"><h2>Caramel Drizzle</h2></label><input type="checkbox" name="addon" id="carameldrizzle"/></div>
+                    <div class="flavor"><label for="cinnamon"><h2>Cinnamon Topping</h2></label><input type="checkbox" name="addon" id="cinnamon"/></div>
+                    <div class="flavor"><label for="dolce"><h2>Dolce Topping</h2></label><input type="checkbox" name="addon" id="dolce"/></div>
+                <br>
+            </section>
+            <section>
+                    <div class="flavor"><label for="cookiecrumble"><h2>Cookie Crumble</h2></label><input type="checkbox" name="addon" id="cookiecrumble"/></div>
+                    <div class="flavor"><label for="caramelsugar"><h2>Caramel Sugar Topping</h2></label><input type="checkbox" name="addon" id="caramelsugar"/></div>
+                    <div class="flavor"><label for="puree"><h2>Strawberry Puree</h2></label><input type="checkbox" name="addon" id="puree"/></div>
+                    <div class="flavor"><label for="vsc"><h2>Vanilla Sweet Cream</h2></label><input type="checkbox" name="addon" id="vsc"/></div>
+            </section>
+            </form>
+            <!--Espresso-->
+            <form action="">
+            <section>
+                <div>
+                    <input type="radio" id="signature" name="espresso" value="Signature">
+                    <label for="signature" class="type">
+                        <h2>Signature Espresso</h2>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" id="blonde" name="espresso" value="Blonde">
+                    <label for="blonde" class="type">
+                        <h2>Blonde Espresso</h2>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" id="decaf" name="espresso" value="Decaf">
+                    <label for="decaf" class="type">
+                        <h2>Decaf Espresso</h2> 
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" id="none" name="espresso" value="None">
+                    <label for="none" class="type">
+                        <h2>None</h2>
+                    </label>
+                </div>
+           </section>
+                <div class="flavor" style="margin-top: 100px; width: 100%; height: 100px; text-align: center; justify-content: center;"><label for="shots"><h2>Shots Quanitity</h2></label><input type="number" name="shots" id="shots"/></div>
+                <br>
+                <h1 style="padding: 30px;">Name Your Creation!</h1>
+
+            <input type='text' name='beveragename' placeholder="Beverage Name" class="bevname" required/>
+
+            <div class="button"><button class='submit-btn'>Submit</button></div>
+            </form>
+        <!--
         <div class='modLeft'>
 
             <h1>Flavors</h1>
@@ -58,9 +224,8 @@
                     <li><label for="quantity">Long</label><input type="radio" name="quantity"/></li>
                 </ul>
         </div>
-
-        </div>
-        <h1 class='button'>Submit</h1>
+-->
+        </div>    
     </div>
 
 {% endblock %}

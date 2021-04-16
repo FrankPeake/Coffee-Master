@@ -1,12 +1,12 @@
-from django import models
-from django_couchbase import CBModel,CBNestedModel
-from django_couchbase import PartialReferenceField, ModelReferenceField
-from djangotoolbox.fields import ListField, EmbeddedModelField, DictField
+from django.db import models
+#from django_couchbase import CBModel,CBNestedModel
+#from django_couchbase import PartialReferenceField, ModelReferenceField
+#from djangotoolbox.fields import ListField, EmbeddedModelField, DictField
 
 
 # Create your models here.
 
-
+'''
 ## Models for beverages
 class Ingredient(CBModel):
     class Meta:
@@ -72,6 +72,5 @@ class User(CBModel):
     feedback = ListField(EmbeddedModelField(Feedback))
 
 
-
-    
+'''
 

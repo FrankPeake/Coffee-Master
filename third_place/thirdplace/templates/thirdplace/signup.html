@@ -1,7 +1,10 @@
-{% extends thirdplace/wrapper.html %}
+{% extends 'thirdplace/wrapper.html' %}
 {% block content %}
 {% load static %}
-
+<head>
+    <link rel="stylesheet" href="{% static 'thirdplace/signupStleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
+</head>
         <div class='login-container'>
             <div class='signup-green'></div>
             <div class='login-form'>

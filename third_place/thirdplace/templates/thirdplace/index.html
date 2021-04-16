@@ -1,13 +1,16 @@
-{% extends thirdplace/wrapper.html %}
+{% extends 'thirdplace/wrapper.html' %}
 {% block content %}
 {% load static %}
-
+<head>
+    <link rel="stylesheet" href="{% static 'thirdplace/indexStyleSheet.css' %}">
+    <link rel="stylesheet" href="{% static 'thirdplace/navbarStyleSheet.css' %}">
+</head>
     <div class='bevBanner'>
         <img src="{% static 'thirdplace/frap.png' %}" alt="Fraps" class="bevPNG"/>
         <ul class = 'bevText'>
             <li class = 'header1'>Beverage Builder</li>
             <li class = 'header2'>Build your own custom drink with our new tool</li>
-            <li class = 'sbutton'>Get Started</li>
+            <a href="{% url 'bevbuilder' %}" style="text-decoration: none; color: white;"><li class = 'sbutton'>Get Started</li></a>
         </ul>
     </div>
     <div class='browsebanner'>
@@ -15,7 +18,7 @@
         <ul class = 'browseText'>
             <li class = 'header1'>Browse Custom Creations</li>
             <li class = 'header2'>Take a look through all our barista and customer created beverages</li>
-            <li class = 'sbutton-browse'>Get Started</li>
+            <a href="{% url 'browser' %}" style="text-decoration: none; color: black;"><li class = 'sbutton-browse'>Get Started</li></a>
         </ul>
     </div>
 {% endblock %}

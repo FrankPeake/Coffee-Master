@@ -2,12 +2,17 @@
   float: center;
   height: 180px;
   background-color: #1e3932;
-  color: black;
+  color: white;
   text-align: center;
 }
-.banner input[type="text"] {
-  width: 600px;
-  top: 100px;
+input[type="text"] {
+  width: 60%;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
 }
 .search-btn {
   width: 10%;
@@ -23,4 +28,12 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 3px;
+}
+.header3 {
+  padding-top: 20px;
+}
+.search-btn:hover,
+.search-btn:focus {
+  box-shadow: inset 15em 0 0 0 #008248;
+  transition: 0.75s ease;
 }

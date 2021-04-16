@@ -1,13 +1,13 @@
-{% extends thirdplace/wrapper.html %}
+{% extends 'thirdplace/wrapper.html' %}
 {% block content %}
 {% load static %}
-
-    <div class='browser-containter'>
+<head>
+    <link rel="stylesheet" href="{% static 'thirdplace/browserStyleSheet.css' %}">
+</head>
         <div class='banner'>
             <h1 class='header3'>Browse Hand Crafted Beverages</h1> 
-            <input name='search' type="text" placeholder="Search.."></input>                        
+            <input type="text" placeholder="Search.."></input>                        
             <button class='search-btn'>Search</button>
         </div>
-    </div>
 
 {% endblock %}
