@@ -2,6 +2,9 @@ from django.db import models
 from django.db.models.base import Model
 from django.db.models.deletion import CASCADE
 from django.db.models.fields.related import ForeignKey
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Removed couchbase support due to change in platform
 #from django_couchbase import CBModel,CBNestedModel
@@ -12,56 +15,53 @@ from django.db.models.fields.related import ForeignKey
 # Create your models here.
 
 ## Models for User Objects
-class User(models.Model):
-    class Meta:
-        abstract = True
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    username = models.CharField(max_length=20, Null=False, Blank=False)
-    password = models.CharField(max_length=20, Null=False, Blank=False)
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=40)
-    email = models.CharField(max_length=100, Unique=True, Blank=False, Null=False)
-    city = models.CharField(max_length=50, Blank=False, Null=False)
-    state_province = models.CharField(max_length=20, Blank=False, Null=False)
+    city = models.CharField(max_length=50, null=False,blank=False)
+    state_province = models.CharField(max_length=20, null=False,blank=False)
+
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()
 
 ## Models for beverages
 
+
+
 class Beverage(models.Model):
-    class Meta:
-        abstract = True
+    
 
     name = models.CharField(max_length=40)
-    isCore = models.BinaryField(Null=False, Default=False)
+    isCore = models.BinaryField(null=False, default=False)
     iced = models.BinaryField()
     type = models.CharField(max_length=15)
-    ingredients = models.CharField()
-    instructions = models.CharField()
 
-class CustomBeverage(Beverage):
-    class Meta:
-        abstract = True    
-    createdBy = models.ForeignKey(User,on_delete=CASCADE)
 
 class Ingredient(models.Model):
-    class Meta:
-        abstract = True
     
     bevID = models.ForeignKey(Beverage,on_delete=CASCADE)
-    ingName = models.CharField(max_length=5, Null=False, Blank=False)
-    quantity = models.DecimalField(max_digits=3, decimal_places=1, Null=True, Blank=True)
+    ingName = models.CharField(max_length=5, null=False, blank=False)
+    quantity = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
 
 class Instruction(models.Model):
-    class Meta:
-        abstract = True
 
-    bevId = models.ForeignKey(Beverage,on_delete=CASCADE)
+
+    bevID = models.ForeignKey(Beverage, on_delete=CASCADE)
     instructionDetail = models.CharField(max_length=50)
 
+class CustomBeverage(Beverage):
+     
+    createdBy = models.ForeignKey(User,on_delete=CASCADE)
+
+
+
 class Feedback(models.Model):
-    class Meta:
-        abstract = True
+
     userID = models.ForeignKey(User,on_delete=CASCADE)
     beverageID = models.ForeignKey(Beverage,on_delete=CASCADE)
-    rating = models.IntegerField(max_length=2, Null=True, Blank=True)
+    rating = models.IntegerField(null=True, blank=True)
     comment = models.TextField()
 

@@ -38,7 +38,8 @@
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"]{
   width: 100%;
   padding: 15px;
   font-size: 16px;
@@ -49,7 +50,8 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus
+input[type="email"]:focus {
   transition: 0.75s ease;
   box-shadow: inset 700px 0 0 0 #d4e9e4;
 }

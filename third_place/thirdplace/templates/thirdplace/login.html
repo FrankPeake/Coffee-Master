@@ -9,10 +9,11 @@
           <div class='logo-wall'></div>
           <div class='login-form'>
               <h1 class='login-heading'>Sign In</h1>
-              <form>
+              <form method="post">
+                {% csrf_token %}
                   <input type='text' name='username' placeholder="Username" required/>
                   <input type='password' name='password' placeholder="Password" required/>
-                  <button class='login-btn'>Login</button>
+                  <button class='login-btn' type="submit">Login</button>
                   <h3 class='not_a_member'>Not a Member? Sign up <a href="{% url 'signup' %}">Here</a></h3>
               </form>
           </div>        

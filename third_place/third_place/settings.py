@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 from secrets import *
 
+import rest_framework
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -53,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    #'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'third_place.urls'
@@ -94,7 +96,12 @@ DATABASES = {
 ##}
 
 
+REST_FRAMEWORK = {
 
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 
 # Password validation
