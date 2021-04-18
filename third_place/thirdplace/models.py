@@ -60,8 +60,8 @@ class Instruction(models.Model):
 class Feedback(models.Model):
     class Meta:
         abstract = True
-    userID = models.ForeignKey(User,on_delete=CASCADE))
+    userID = models.ForeignKey(User,on_delete=CASCADE)
     beverageID = models.ForeignKey(Beverage,on_delete=CASCADE)
     rating = models.IntegerField(max_length=2, Null=True, Blank=True)
-    comment = models.TextField())
+    comment = models.TextField()
 
