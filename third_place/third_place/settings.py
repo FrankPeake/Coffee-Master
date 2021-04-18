@@ -89,9 +89,9 @@ DATABASES = {
 
 
 ## Couchbase buckets for use in data
-CB_BUCKETS = {
-    "COFFEEMASTERS" : '127.0.0.1/CoffeeMasters'
-}
+##CB_BUCKETS = {
+##    "COFFEEMASTERS" : '127.0.0.1/CoffeeMasters'
+##}
 
 
 

@@ -1,4 +1,9 @@
 from django.db import models
+from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
+from django.db.models.fields.related import ForeignKey
+
+# Removed couchbase support due to change in platform
 #from django_couchbase import CBModel,CBNestedModel
 #from django_couchbase import PartialReferenceField, ModelReferenceField
 #from djangotoolbox.fields import ListField, EmbeddedModelField, DictField
@@ -6,61 +11,10 @@ from django.db import models
 
 # Create your models here.
 
-'''
-## Models for beverages
-class Ingredient(CBModel):
-    class Meta:
-        abstract = True
-    
-    doc_type = 'ingredient'
-    id_prefix = 'igr'
-
-    cupID = models.charField(max_length=5, Null=False, Blank=False)
-    name = models.charField(max_length=30, Null=False, Blank=False)
-    ingType = models.charField(max_length=10)
-    quantity = models.DecimalField(max_digits=3, decimal_places=1, Null=True, Blank=True)
-
-class Instruction(CBNestedModel):
-    class Meta:
-        abstract = True
-
-    doc_type = 'instruction'
-    id_prefix = 'ins'
-
-    instructionDetail = models.CharField(max_length=50)
-
-class Beverage(CBModel):
-    class Meta:
-        abstract = True
-
-    doc_type = 'beverage'
-    id_prefix = 'bev'
-
-    name = models.charField(max_length=40)
-    isCore = models.Binary_Field(Null=False, Default=False)
-    iced = models.Binary_Field()
-    type = models.CharField(max_length=15)
-    ingredients = ListField(EmbeddedModelField(Ingredient))
-    instructions = ListField(EmbeddedModelField(Instruction))
-
 ## Models for User Objects
-
-class Feedback(CBNestedModel):
+class User(models.Model):
     class Meta:
         abstract = True
-
-    doc_type = 'feedback'
-    id_prefix = 'fb'
-
-    rating = models.IntegerField(max_length=2, Null=True, Blank=True)
-    comment = models.TextField()
-
-class User(CBModel):
-    class Meta:
-        abstract = True
-    
-    doc_type = 'user'
-    id_prefix = 'usr'
 
     username = models.CharField(max_length=20, Null=False, Blank=False)
     password = models.CharField(max_length=20, Null=False, Blank=False)
@@ -69,8 +23,45 @@ class User(CBModel):
     email = models.CharField(max_length=100, Unique=True, Blank=False, Null=False)
     city = models.CharField(max_length=50, Blank=False, Null=False)
     state_province = models.CharField(max_length=20, Blank=False, Null=False)
-    feedback = ListField(EmbeddedModelField(Feedback))
 
+## Models for beverages
 
-'''
+class Beverage(models.Model):
+    class Meta:
+        abstract = True
+
+    name = models.CharField(max_length=40)
+    isCore = models.BinaryField(Null=False, Default=False)
+    iced = models.BinaryField()
+    type = models.CharField(max_length=15)
+    ingredients = models.CharField()
+    instructions = models.CharField()
+
+class CustomBeverage(Beverage):
+    class Meta:
+        abstract = True    
+    createdBy = models.ForeignKey(User,on_delete=CASCADE)
+
+class Ingredient(models.Model):
+    class Meta:
+        abstract = True
+    
+    bevID = models.ForeignKey(Beverage,on_delete=CASCADE)
+    ingName = models.CharField(max_length=5, Null=False, Blank=False)
+    quantity = models.DecimalField(max_digits=3, decimal_places=1, Null=True, Blank=True)
+
+class Instruction(models.Model):
+    class Meta:
+        abstract = True
+
+    bevId = models.ForeignKey(Beverage,on_delete=CASCADE)
+    instructionDetail = models.CharField(max_length=50)
+
+class Feedback(models.Model):
+    class Meta:
+        abstract = True
+    userID = models.ForeignKey(User,on_delete=CASCADE))
+    beverageID = models.ForeignKey(Beverage,on_delete=CASCADE)
+    rating = models.IntegerField(max_length=2, Null=True, Blank=True)
+    comment = models.TextField())
 
