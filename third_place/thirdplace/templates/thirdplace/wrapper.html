@@ -22,12 +22,19 @@
             </a>
         </ul>
         <ul class="signUp">
-            <a href="{% url 'login' %}" class='blkLink'>
-                <li class='signIn'>Sign In</li>
-            </a>
-            <a href="{% url 'signup' %}" class='blkLink'>
-                <li class='joinNow'>Sign Up</li>
-            </a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class='blkLink'>
+                    <li class='signIn'>Sign Out</li>
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}" class='blkLink'>
+                    <li class='signIn'>Sign In</li>
+                </a>
+
+                <a href="{% url 'signup' %}" class='blkLink'>
+                    <li class='joinNow'>Sign Up</li>
+                </a>
+            {% endif %}
         </ul>
     </nav>
     {% block content %}

@@ -10,5 +10,5 @@ urlpatterns = [
     path('browser/', views.browser, name= 'browser'),
     path('bevbuilder/', views.bevbuilder, name= 'bevbuilder'),
     path('signup/', views.signup, name='signup'),
-
+    path('logout/', views.logout, name='logout')
 ]
